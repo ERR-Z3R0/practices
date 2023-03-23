@@ -1,0 +1,12 @@
+{
+  "name": "js-practices",
+  "version": "1.0.0",
+  "description": "Este es un repositorio práctico en el cual iremos subiendo el código de las mismas, además en la rama pruebas estarán códigos rotos que @Expana tebdrá que resolver conforme avancemos en este curso de auto-aprendizaje jeje",
+  "main": "arrays.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
