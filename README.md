@@ -10,7 +10,7 @@ const people = [
     {
         name: 'example',
         lastName: 'example',
-        email: 'example@gmail.com'
+        email: 'example@gmail.com',
         age: 0
     }
 ]
