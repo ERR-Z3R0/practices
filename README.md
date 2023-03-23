@@ -1,7 +1,9 @@
 # Prácticas de JavaScript con Manyion
 Este es un repositorio práctico en el cual iremos subiendo el código de las mismas, además en la rama pruebas estarán códigos rotos que @Expana tebdrá que resolver conforme avancemos en este curso de auto-aprendizaje jeje
 
-| Archivo | Descricción |
+# Tabla de contenido
+
+| Title | Description |
 |---------|-------------|
 | [Objetos y Arreglos](#objetos-y-arreglos-en-javascript) | Chupalo |
 
