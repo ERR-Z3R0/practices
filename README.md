@@ -1,6 +1,10 @@
 # Prácticas de JavaScript con Manyion
 Este es un repositorio práctico en el cual iremos subiendo el código de las mismas, además en la rama pruebas estarán códigos rotos que @Expana tebdrá que resolver conforme avancemos en este curso de auto-aprendizaje jeje
 
+| Archivo | Descricción |
+|---------|-------------|
+| [Objetos y Arreglos](#objetos-y-arreglos-en-javascript) | Chupalo |
+
 
 ## Objetos y Arreglos en JavaScript
 En este punto aprenderemos a recorrer un arreglo y a acceder a un elemento `en este caso un objeto` mediante su índice.
