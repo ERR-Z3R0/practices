@@ -5,7 +5,7 @@ Este es un repositorio práctico en el cual iremos subiendo el código de las mi
 
 | Title | Description |
 |---------|-------------|
-| [Objetos y Arreglos](#objetos-y-arreglos-en-javascript) | Chupalo |
+| [Objetos y Arreglos](#objetos-y-arreglos-en-javascript) | Recorrer un Array y acceder a sus elementos. |
 
 
 ## Objetos y Arreglos en JavaScript
