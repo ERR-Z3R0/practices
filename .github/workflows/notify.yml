@@ -22,6 +22,8 @@ jobs:
           embed-author-icon-url: ${{ github.event.actor.avatar_url }}
           embed-description: "🗂 **Commit:** [`${{ github.event.head_commit.id }}`](${{ github.event.head_commit.url }}) ${{ github.event.head_commit.message }}"
 
+      - name: Echo
+        run: echo ${{ github.event.actor.avatar_url }}
         # uses: stegzilla/discord-notify@v2
         # with:
         #   webhook_url: https://discord.com/api/webhooks/1088644572202151978/bj9SMeKO00N1ZxezPLjjEphwoF4qd1-TfhAIph7kQA_afmBCV_d1fs_aRl_0qxa2KkMJ
