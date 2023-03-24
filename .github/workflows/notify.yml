@@ -17,13 +17,14 @@ jobs:
         with:
           webhook-url: https://discord.com/api/webhooks/1088644572202151978/bj9SMeKO00N1ZxezPLjjEphwoF4qd1-TfhAIph7kQA_afmBCV_d1fs_aRl_0qxa2KkMJ
           username: GitHub ERR-Z3R0
-          embed-title: "${{ github.event.head_commit.author.name }} ${{ github.event_name }} on Main Branch!"
+          embed-title: "🗂 **Commit Message:**"
           embed-url: ${{ github.event.head_commit.url }}
-          embed-author-name: ${{ github.event.head_commit.author.username }}
+          embed-author-name: "${{ github.event.head_commit.author.username }}(${{ github.event.head_commit.author.name }}): ${{ github.event_name }} on Main Branch!"
           embed-author-icon-url: ${{ github.event.sender.avatar_url }}
-          embed-author-url: ${{ github.event.sender.url }}
-          embed-description: "🗂 **Commit:** ${{ github.event.head_commit.message }}"
+          embed-author-url: ${{ github.event.head_commit.url }}
+          embed-description: "${{ github.event.head_commit.message }}"
           embed-thumbnail-url: ${{ github.event.organization.avatar_url }}
+          embed-color: "#FFF"
           embed-timestamp: ${{ github.event.head_commit.timestamp }}
           # [`${{ github.event.head_commit.id }}`](${{ github.event.head_commit.url }})
 
