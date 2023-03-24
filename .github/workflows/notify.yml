@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/ckeckout@v3
+        with:
+          fetch-depth: 0
       - name: Send Discord Notification
         uses: stegzilla/discord-notify@v2
         with:
