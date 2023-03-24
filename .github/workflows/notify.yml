@@ -9,11 +9,12 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/ckeckout@v3
       - name: Send Discord Notification
         uses: stegzilla/discord-notify@v2
         with:
           webhook_url: https://discord.com/api/webhooks/1088644572202151978/bj9SMeKO00N1ZxezPLjjEphwoF4qd1-TfhAIph7kQA_afmBCV_d1fs_aRl_0qxa2KkMJ
           title: New Push on Main Branch
-          message: "${{ github.context.payload.repository.name }}"
+          message: "${{ commit.description }}"
           include_image: true
           username: GitHub ERR-Z3R0
