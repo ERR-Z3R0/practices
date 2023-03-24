@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 0
 
       - name: Send Discord Notification
-        uses: EhsanFox/djs-actions
+        uses: ehsanfox/djs-actions
         with:
           id: '1088644572202151978'
           token: 'bj9SMeKO00N1ZxezPLjjEphwoF4qd1-TfhAIph7kQA_afmBCV_d1fs_aRl_0qxa2KkMJ'
