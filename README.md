@@ -6,7 +6,7 @@ Este es un repositorio práctico en el cual iremos subiendo el código de las mi
 | Title | Description |
 |---------|-------------|
 | [Objetos y Arreglos](#objetos-y-arreglos-en-javascript) | Recorrer un Array y acceder a sus elementos. |
-| Métodos | Lo veremos en la próxima práctica jaja |
+| Métodos | Lo veremos en la próxima práctica jaja `join, split, startWith, content, entre otros` |
 
 
 ## Objetos y Arreglos en JavaScript
