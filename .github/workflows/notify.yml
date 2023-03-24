@@ -19,8 +19,8 @@ jobs:
           username: GitHub ERR-Z3R0
           embed-title: "${{ github.event.head_commit.author.name }}: ${{ github.event_name }} on Main Branch!"
           embed-url: ${{ github.event.head_commit.url }}
-          embed-author-icon-url: ${{ github.event.head_commit.author.avatarUrl }}
-          embed-description: "🗂 **Commit:** [`${{ github.event.head_commit.id }}`](${{ github.event.head_commit.url }}) github.event.head_commit.message"
+          embed-author-icon-url: ${{ github.event.actor.avatar_url }}
+          embed-description: "🗂 **Commit:** [`${{ github.event.head_commit.id }}`](${{ github.event.head_commit.url }}) ${{ github.event.head_commit.message }}"
 
         # uses: stegzilla/discord-notify@v2
         # with:
