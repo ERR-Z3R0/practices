@@ -1,3 +1,6 @@
+//  Cuantas personas hay
+// + de 1 imprimir solo los nombres en pantalla o en consola
+
 const people = [
   {
     name: 'Chucho',
@@ -55,6 +58,3 @@ function ageVerify (arrSize, array) {
 ageVerify(peopleSize, people)
 
 ageVerify(catsSize, cats)
-
-//  Cuantas personas hay
-// + de 1 imprimir solo los nombres en pantalla o en consola
