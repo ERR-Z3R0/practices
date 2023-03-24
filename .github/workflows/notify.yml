@@ -23,7 +23,7 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v35.7.6
         with:
-          separator: "\n"
+          separator: \n
 
       - name: Send Discord Notification
         if: ${{ github.event_name == 'push' }}
