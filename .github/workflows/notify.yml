@@ -14,5 +14,6 @@ jobs:
         with:
           webhook_url: https://discord.com/api/webhooks/1088644572202151978/bj9SMeKO00N1ZxezPLjjEphwoF4qd1-TfhAIph7kQA_afmBCV_d1fs_aRl_0qxa2KkMJ
           title: New Push on Main Branch
-          message: "**${{ github.repository_name }}**"
+          message: "**${{ commit.author.name }}**"
           include_image: true
+          username: GitHub ERR-Z3R0
