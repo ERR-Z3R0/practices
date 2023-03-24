@@ -20,10 +20,11 @@ jobs:
           embed-title: "${{ github.event.head_commit.author.name }}: ${{ github.event_name }} on Main Branch!"
           embed-url: ${{ github.event.head_commit.url }}
           embed-author-icon-url: ${{ github.event.actor.avatar_url }}
-          embed-description: "🗂 **Commit:** [`${{ github.event.head_commit.id }}`](${{ github.event.head_commit.url }}) ${{ github.event.head_commit.message }}"
+          embed-description: "🗂 **Commit:** ${{ github.event.head_commit.message }}"
+          # [`${{ github.event.head_commit.id }}`](${{ github.event.head_commit.url }})
 
       - name: Echo
-        run: echo ${{ github.event.actor.avatar_url }}
+        run: echo ${{ toJSON(github.event) }}
         # uses: stegzilla/discord-notify@v2
         # with:
         #   webhook_url: https://discord.com/api/webhooks/1088644572202151978/bj9SMeKO00N1ZxezPLjjEphwoF4qd1-TfhAIph7kQA_afmBCV_d1fs_aRl_0qxa2KkMJ
