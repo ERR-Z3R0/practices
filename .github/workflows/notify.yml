@@ -23,6 +23,8 @@ jobs:
           embed-author-icon-url: ${{ github.event.sender.avatar_url }}
           embed-author-url: ${{ github.event.sender.url }}
           embed-description: "🗂 **Commit:** ${{ github.event.head_commit.message }}"
+          embed-thumbnail-url: ${{ github.event.organization.avatar_url }}
+          embed-timestamp: ${{ github.event.head_commit.timestamp }}
           # [`${{ github.event.head_commit.id }}`](${{ github.event.head_commit.url }})
 
   # logs:
