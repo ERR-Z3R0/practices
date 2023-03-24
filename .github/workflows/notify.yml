@@ -11,7 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: 'https://github.com/ERR-Z3R0/practices'
+          repository: '${{ github.repository }}'
+          token: '${{ github.token }}'
+          fetch-depth: 0
 
       - name: Send Discord Notification
         uses: stegzilla/discord-notify@v2
