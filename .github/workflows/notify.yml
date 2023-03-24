@@ -61,7 +61,7 @@ jobs:
           # [`${{ github.event.head_commit.id }}`](${{ github.event.head_commit.url }})
 
       - name: Closed Pull Request Notify
-        if: ${{ github.event.pull_request.state == "closed" }}
+        if: ${{ github.event.pull_request.state == 'closed' }}
         uses: tsickert/discord-webhook@v5.3.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
@@ -77,7 +77,7 @@ jobs:
           embed-timestamp: ${{ github.event.head_commit.timestamp }}
 
       - name: Merged Pull Request Notify
-        if: ${{ github.event.pull_request.state == "synchronize" }}
+        if: ${{ github.event.pull_request.state == 'synchronize' }}
         uses: tsickert/discord-webhook@v5.3.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
