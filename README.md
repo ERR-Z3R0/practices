@@ -6,6 +6,7 @@ Este es un repositorio práctico en el cual iremos subiendo el código de las mi
 | Title | Description |
 |---------|-------------|
 | [Objetos y Arreglos](#objetos-y-arreglos-en-javascript) | Recorrer un Array y acceder a sus elementos. |
+| Métodos | Lo veremos en la próxima práctica jaja |
 
 
 ## Objetos y Arreglos en JavaScript
