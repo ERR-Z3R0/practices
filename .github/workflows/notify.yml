@@ -9,9 +9,10 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/ckeckout@v3
+      - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          repository: https://github.com/ERR-Z3R0/practices
+
       - name: Send Discord Notification
         uses: stegzilla/discord-notify@v2
         with:
