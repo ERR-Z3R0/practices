@@ -21,7 +21,7 @@ jobs:
           embed-url: ${{ github.event.head_commit.commitUrl }}
           embed-author-icon-url: ${{ github.event.head_commit.author.avatarUrl }}
           embed-description: "🗂 **Commit:** [`${{ github.event.head_commit.abbreviatedOid }}`](${{ github.event.head_commit.commitUrl }})"
-          embed-timestamp: true
+          
         # uses: stegzilla/discord-notify@v2
         # with:
         #   webhook_url: https://discord.com/api/webhooks/1088644572202151978/bj9SMeKO00N1ZxezPLjjEphwoF4qd1-TfhAIph7kQA_afmBCV_d1fs_aRl_0qxa2KkMJ
