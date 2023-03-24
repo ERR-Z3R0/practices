@@ -24,6 +24,7 @@ jobs:
         uses: tj-actions/changed-files@v35.7.6
         with:
           separator: \n
+        # en teoría debería funcionar
 
       - name: Send Discord Notification
         if: ${{ github.event_name == 'push' }}
