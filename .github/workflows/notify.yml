@@ -15,8 +15,8 @@ jobs:
       - name: Send Discord Notification
         uses: ehsanfox/discord.js-webhook
         with:
-          id: 1088644572202151978
-          token: bj9SMeKO00N1ZxezPLjjEphwoF4qd1-TfhAIph7kQA_afmBCV_d1fs_aRl_0qxa2KkMJ
+          id: '1088644572202151978'
+          token: 'bj9SMeKO00N1ZxezPLjjEphwoF4qd1-TfhAIph7kQA_afmBCV_d1fs_aRl_0qxa2KkMJ'
           usernane: GitHub ERR-Z3R0
           title: "${{ github.event.head_commit.author.name }}: ${{ github.event_name }} on Main Branch!"
           url: ${{ github.event.head_commit.commitUrl }}
