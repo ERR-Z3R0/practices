@@ -21,6 +21,9 @@ jobs:
       - name: Changed Files
         id: changed-files
         uses: tj-actions/changed-files@v35.7.6
+        with:
+          separator: "\n"
+          dir_names_exclude_root: true
 
       - name: Send Discord Notification
         uses: tsickert/discord-webhook@v5.3.0
@@ -32,7 +35,7 @@ jobs:
           embed-author-url: ${{ github.event.head_commit.url }}
           embed-title: "🗂 FIles that have changed:"
           # embed-url: ${{ github.event.head_commit.url }}
-          embed-description: "`${{ steps.changed-files.outputs.all_changed_files }}`\n**Commit:** ${{ github.event.head_commit.message }}"
+          embed-description: "`${{ join(steps.changed-files.outputs.all_changed_files, '\n') }}`\n**Commit:** ${{ github.event.head_commit.message }}"
           embed-thumbnail-url: ${{ github.event.organization.avatar_url }}
           embed-footer-text: Z3R0 Team
           embed-color: 15430476
