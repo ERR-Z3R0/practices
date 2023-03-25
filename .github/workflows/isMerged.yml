@@ -3,7 +3,8 @@ name: Is Merged
 on:
   pull_request:
     branches: [main]
-    types: [closed]
+    types:
+      - closed
 
 jobs:
   Merged:
@@ -18,6 +19,9 @@ jobs:
         uses: tj-actions/changed-files@v35.7.6
         with:
           separator: '\n'
+
+      - name: Echo Logs Data
+        run: echo ${{ github.event.pull_request.merged }}
       
       - name: Merged Pull Request Notify
         if: ${{ github.event.pull_request.merged == 'true' }}
