@@ -21,10 +21,10 @@ jobs:
           separator: '\n'
 
       - name: Echo Logs Data
-        run: echo ${{ github.event.pull_request.merged }}
+        run: echo ${{ github.event.pull_request.state }}
       
       - name: Merged Pull Request Notify
-        if: ${{ github.event.pull_request.merged == 'true' }}
+        # if: ${{ github.event.pull_request.merged == 'true' }}
         uses: tsickert/discord-webhook@v5.3.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
@@ -40,7 +40,7 @@ jobs:
           embed-timestamp: ${{ github.event.pull_request.merged_at }}
       
       - name: Closed Pull Request Notify
-        if: ${{ github.event.pull_request.merged == 'false' }}
+        if: ${{ github.event.pull_request.state == 'closed' }}
         uses: tsickert/discord-webhook@v5.3.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
