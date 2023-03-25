@@ -23,7 +23,7 @@ jobs:
       - name: Echo Logs Data
         run: |
           echo ${{ github.event.pull_request.state }} ${{ github.event.pull_request.merged }}
-          echo ${{ toJSON(github.event.pull_request.merged_by) }}
+          echo ${{ github.event.pull_request.head.sha }}
       
       - name: Merged Pull Request Notify
         # if: ${{ github.event.pull_request.merged == 'true' }}

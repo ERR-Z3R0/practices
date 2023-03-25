@@ -53,7 +53,7 @@ jobs:
           embed-author-icon-url: ${{ github.event.sender.avatar_url }}
           embed-author-url: ${{ github.event.pull_request.url }}
           embed-title: "<:gitpullrequest:1088948284086812783> ${{ github.event.pull_request.title }} [#${{ github.event.pull_request.number }}]"
-          embed-description: "**Description:**\n```md\n${{ github.event.pull_request.body }}```\n\n**Files(${{ github.event.pull_request.changed_files }}):**\n`${{ steps.changed-files.outputs.all_changed_files }}`"
+          embed-description: "**Description:**\n```md\n${{ github.event.pull_request.body }}```\n**Files(${{ github.event.pull_request.changed_files }}):**\n`${{ steps.changed-files.outputs.all_changed_files }}`"
           embed-thumbnail-url: ${{ github.event.organization.avatar_url }}
           embed-footer-text: Z3R0 Team
           embed-color: 3997523
