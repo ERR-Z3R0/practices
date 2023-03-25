@@ -61,12 +61,12 @@ jobs:
           # [`${{ github.event.head_commit.id }}`](${{ github.event.head_commit.url }})
 
       - name: Merged Pull Request Notify
-        if: ${{ github.event.pull_request.state == 'merged' }}
+        if: ${{ github.event.pull_request.merged == 'true' }}
         uses: tsickert/discord-webhook@v5.3.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           username: GitHub ERR-Z3R0
-          embed-author-name: "${{ github.event.sender.login }}: ${{ github.event.pull_request.state }} Pull Request to Main Branch!"
+          embed-author-name: "${{ github.event.pull_request.merged_by.name }}[${{ github.event.pull_request.merged_by.type }}]: Has Merged Pull Request to Main Branch!"
           embed-author-icon-url: ${{ github.event.sender.avatar_url }}
           embed-author-url: ${{ github.event.pull_request.url }}
           embed-title: "<:gitmerge:1088970936096661584> ${{ github.event.pull_request.title }} [#${{ github.event.pull_request.number }}]"
@@ -74,7 +74,7 @@ jobs:
           embed-thumbnail-url: ${{ github.event.organization.avatar_url }}
           embed-footer-text: Z3R0 Team
           embed-color: 9844197
-          embed-timestamp: ${{ github.event.head_commit.timestamp }}
+          embed-timestamp: ${{ github.event.pull_request.merged_at }}
 
       - name: Closed Pull Request Notify
         if: ${{ github.event.pull_request.state == 'closed' }}
