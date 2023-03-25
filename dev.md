@@ -8,4 +8,5 @@
  - [ ] Prueba 5 (Err)
  - [X] Prueba 6 (Pass) 
  - [ ] Prueba 7 (Err)
- - [ ] Prueba 8
+ - [x] Prueba 8 (Pasó rosando jaja)
+ - [ ] Prueba 9, le tengo fé 🙌
