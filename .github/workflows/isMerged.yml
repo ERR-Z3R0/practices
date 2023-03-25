@@ -1,0 +1,52 @@
+name: Is Merged
+
+on:
+  pull_request:
+    branches: [main]
+    types: [closed]
+
+jobs:
+  Merged:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Changed Files
+        id: changed-files
+        uses: tj-actions/changed-files@v35.7.6
+        with:
+          separator: '\n'
+      
+      - name: Merged Pull Request Notify
+        if: ${{ github.event.pull_request.merged == 'true' }}
+        uses: tsickert/discord-webhook@v5.3.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          username: GitHub ERR-Z3R0
+          embed-author-name: "${{ github.event.pull_request.merged_by.name }}[${{ github.event.pull_request.merged_by.type }}]: Has Merged Pull Request to Main Branch!"
+          embed-author-icon-url: ${{ github.event.sender.avatar_url }}
+          embed-author-url: ${{ github.event.pull_request.url }}
+          embed-title: "<:gitmerge:1088970936096661584> ${{ github.event.pull_request.title }} [#${{ github.event.pull_request.number }}]"
+          embed-description: "**Description:**\n```md\n${{ github.event.pull_request.body }}```\n**Files(${{ github.event.pull_request.changed_files }}):**\n`${{ steps.changed-files.outputs.all_changed_files }}`"
+          embed-thumbnail-url: ${{ github.event.organization.avatar_url }}
+          embed-footer-text: Z3R0 Team
+          embed-color: 9844197
+          embed-timestamp: ${{ github.event.pull_request.merged_at }}
+      
+      - name: Closed Pull Request Notify
+        if: ${{ github.event.pull_request.merged == 'false' }}
+        uses: tsickert/discord-webhook@v5.3.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          username: GitHub ERR-Z3R0
+          embed-author-name: "${{ github.event.sender.login }} has closed this Pull Request!"
+          embed-author-icon-url: ${{ github.event.sender.avatar_url }}
+          embed-author-url: ${{ github.event.pull_request.url }}
+          embed-title: "<:gitpullclosed:1088970939477282858> ${{ github.event.pull_request.title }} [#${{ github.event.pull_request.number }}]"
+          embed-description: "**Description:**\n`\n${{ github.event.pull_request_review_comment.comment.body }}`"
+          embed-thumbnail-url: ${{ github.event.organization.avatar_url }}
+          embed-footer-text: Z3R0 Team
+          embed-color: 16731726
+          embed-timestamp: ${{ github.event.pull_request.closed_at }}
