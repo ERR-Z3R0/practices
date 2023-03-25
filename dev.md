@@ -2,4 +2,5 @@
  Vamos a ir probando los estados del pull request
  
  - [X] Prueba 1
- - [ ] Prueba 2
+ - [x] Prueba 2
+ - [ ] Prueba 3
