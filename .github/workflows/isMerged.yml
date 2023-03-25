@@ -21,7 +21,9 @@ jobs:
           separator: '\n'
 
       - name: Echo Logs Data
-        run: echo ${{ github.event.pull_request.state }}
+        run: |
+          echo ${{ github.event.pull_request.state }} ${{ github.event.pull_request.merged }}
+          echo ${{ toJSON(github.event.pull_request.merged_by) }}
       
       - name: Merged Pull Request Notify
         # if: ${{ github.event.pull_request.merged == 'true' }}
