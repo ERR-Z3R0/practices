@@ -57,7 +57,7 @@ jobs:
           embed-thumbnail-url: ${{ github.event.organization.avatar_url }}
           embed-footer-text: Z3R0 Team
           embed-color: 3997523
-          embed-timestamp: ${{ github.event.head_commit.timestamp }}
+          embed-timestamp: ${{ github.event.pull_request.created_at }}
 
   # logs:
   #   runs-on: ubuntu-latest
