@@ -44,7 +44,7 @@ jobs:
           embed-timestamp: ${{ github.event.head_commit.timestamp }}
           # [`${{ github.event.head_commit.id }}`](${{ github.event.head_commit.url }})
       - name: Open Pull Request Notify
-        if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ github.event.pull_request.state == 'open' }}
         uses: tsickert/discord-webhook@v5.3.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
@@ -70,7 +70,7 @@ jobs:
           embed-author-icon-url: ${{ github.event.sender.avatar_url }}
           embed-author-url: ${{ github.event.pull_request.url }}
           embed-title: "<:gitpullclosed:1088970939477282858> ${{ github.event.pull_request.title }} [#${{ github.event.pull_request.number }}]"
-          embed-description: "**Description:**\n```md\n${{ github.event.pull_request_review_comment.comment.body }}```"
+          embed-description: "**Description:**\n`\n${{ github.event.pull_request_review_comment.comment.body }}`"
           embed-thumbnail-url: ${{ github.event.organization.avatar_url }}
           embed-footer-text: Z3R0 Team
           embed-color: 16731726
