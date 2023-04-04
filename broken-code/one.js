@@ -1,5 +1,5 @@
 // Ejercicio #1
-
+//Xd
 // Hay una aplicación que muestra información pública de un tweet pero ésta necesita la id del tweet.
 // Se conoce que la url de un tweet contiene dicha id numérica al final de la url.
 // Ten en cuenta que el usuario te va a proporcionar url distintas, cómo también te puede proporcionar una url que no sea
