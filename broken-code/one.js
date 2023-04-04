@@ -11,3 +11,18 @@ const tweetShareUrl= 'https://twitter.com/folklorebot/status/1641179258839248896
 const noTwitterUrl = 'https://github.com/users/EDUJOS/projects/2/views/1?layout=board'
 
 // Escribe la función aquí
+let listaUrl = [tweetUrl, tweetShareUrl, noTwitterUrl]
+let listaUrlNumero = listaUrl.length
+
+ function verTwit (listaUrl, listaUrlNumero) { 
+  for(let i = 0; i < listaUrlNumero; i++){
+  let url = listaUrl[i]
+  if (url.startsWith("https://twitter.com")){
+    console.log(` Este url ${url} es de Twitter `)
+  }else{
+    console.log(`Este url ${url} no es de Twitter `)
+  }
+ }
+}
+
+verTwit(listaUrl, listaUrlNumero)
