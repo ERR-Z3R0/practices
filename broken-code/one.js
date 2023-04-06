@@ -1,5 +1,5 @@
 // Ejercicio #1
-
+//Xd
 // Hay una aplicación que muestra información pública de un tweet pero ésta necesita la id del tweet.
 // Se conoce que la url de un tweet contiene dicha id numérica al final de la url.
 // Ten en cuenta que el usuario te va a proporcionar url distintas, cómo también te puede proporcionar una url que no sea
@@ -11,3 +11,18 @@ const tweetShareUrl= 'https://twitter.com/folklorebot/status/1641179258839248896
 const noTwitterUrl = 'https://github.com/users/EDUJOS/projects/2/views/1?layout=board'
 
 // Escribe la función aquí
+function getId (url){
+  const twitterUrl = 'https://twitter.com'
+  if (url.startsWith(twitterUrl) && url.includes("status")) {
+    let splited = url.split("/")[5]
+    let id = splited
+    if (id.includes("?")){
+      id = id.split('?')[0]
+      return id
+    }
+    return id
+  } 
+  return false
+}
+
+getId (tweetShareUrl)
