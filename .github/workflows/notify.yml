@@ -30,7 +30,8 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         uses: EhsanFox/djs-actions@0.1.0
         with:
-          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          id: ${{ secrets.WEBHOOK_ID }}
+          token: ${{ secrets.WEBHOOK_TOKEN }}
           username: GitHub ERR-Z3R0
           author: "${{ github.event.head_commit.author.username }}(${{ github.event.head_commit.author.name }}): ${{ github.event_name }} on Main Branch!"
           author_icon: ${{ github.event.sender.avatar_url }}
@@ -48,7 +49,8 @@ jobs:
         if: ${{ github.event.pull_request.state == 'open' }}
         uses: EhsanFox/djs-actions@0.1.0
         with:
-          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          id: ${{ secrets.WEBHOOK_ID }}
+          token: ${{ secrets.WEBHOOK_TOKEN }}
           username: GitHub ERR-Z3R0
           author: "${{ github.event.sender.login }}: ${{ github.event.pull_request.state }} Pull Request to Main Branch!"
           author_icon: ${{ github.event.sender.avatar_url }}
