@@ -14,9 +14,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
+      # - uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '16'
 
       - name: Changed Files
         id: changed-files
@@ -32,37 +32,33 @@ jobs:
       
       - name: Merged Pull Request Notify
         if: github.event.pull_request.merged == true
-        uses: EhsanFox/djs-actions@0.1.0
+        uses: tsickert/discord-webhook@v5.3.0
         with:
-          id: ${{ secrets.WEBHOOK_ID }}
-          token: ${{ secrets.WEBHOOK_TOKEN }}
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           username: GitHub ERR-Z3R0
-          avatar: ${{ github.event.organization.avatar_url }}
-          author: "${{ github.event.pull_request.merged_by.name }}[${{ github.event.pull_request.merged_by.type }}]: Has Merged Pull Request to Main Branch!"
-          author_url: ${{ github.event.pull_request._links.self }}
-          author_icon: ${{ github.event.sender.avatar_url }}
-          title: "<:gitmerge:1088970936096661584> ${{ github.event.pull_request.title }} [#${{ github.event.pull_request.number }}]"
-          description: "**Description:**\n```md\n${{ github.event.pull_request.body }}```\n**Files(${{ github.event.pull_request.changed_files }}):**\n`${{ steps.changed-files.outputs.all_changed_files }}`"
-          thumbnail: ${{ github.event.organization.avatar_url }}
-          foooter: Z3R0 Team
-          color: "#9635E5"
-          timestamp: ${{ github.event.pull_request.merged_at }}
+          embed-author-name: "${{ github.event.pull_request.merged_by.name }}[${{ github.event.pull_request.merged_by.type }}]: Has Merged Pull Request to Main Branch!"
+          embed-author-url: ${{ github.event.pull_request._links.self }}
+          embed-author-icon-url: ${{ github.event.sender.avatar_url }}
+          embed-title: "<:gitmerge:1088970936096661584> ${{ github.event.pull_request.title }} [#${{ github.event.pull_request.number }}]"
+          embed-description: "**Description:**\n```md\n${{ github.event.pull_request.body }}```\n**Files(${{ github.event.pull_request.changed_files }}):**\n`${{ steps.changed-files.outputs.all_changed_files }}`"
+          embed-thumbnail-url: ${{ github.event.organization.avatar_url }}
+          embed-footer-text: Z3R0 Team
+          embed-color: 9844197
+          embed-timestamp: ${{ github.event.pull_request.merged_at }}
       
       - name: Closed Pull Request Notify
         if: github.event.pull_request.merged == false
-        uses: EhsanFox/djs-actions@0.1.0
+        uses: tsickert/discord-webhook@v5.3.0
         with:
-          id: ${{ secrets.WEBHOOK_ID }}
-          token: ${{ secrets.WEBHOOK_TOKEN }}
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           username: GitHub ERR-Z3R0
-          avatar: ${{ github.event.organization.avatar_url }}
-          author: "${{ github.event.sender.login }} has closed this Pull Request!"
-          author_url: ${{ github.event.sender.avatar_url }}
-          author_icon: ${{ github.event.sender.avatar_url }}
-          title: "<:gitpullclosed:1088970939477282858> ${{ github.event.pull_request.title }} [#${{ github.event.pull_request.number }}]"
-          thumbnail: ${{ github.event.organization.avatar_url }}
-          footer: Z3R0 Team
-          color: "#FF4E4E"
-          timestamp: ${{ github.event.pull_request.closed_at }}
+          embed-author-name: "${{ github.event.sender.login }} has closed this Pull Request!"
+          embed-author-url: ${{ github.event.sender.avatar_url }}
+          embed-author-icon-url: ${{ github.event.sender.avatar_url }}
+          embed-title: "<:gitpullclosed:1088970939477282858> ${{ github.event.pull_request.title }} [#${{ github.event.pull_request.number }}]"
+          embed-thumbnail-url: ${{ github.event.organization.avatar_url }}
+          embed-footer-text: Z3R0 Team
+          embed-color: 16731726
+          embed-timestamp: ${{ github.event.pull_request.closed_at }}
           
           # embed-description: "**Description:**\n`\n${{ github.event.pull_request_review_comment.comment.body }}`"
