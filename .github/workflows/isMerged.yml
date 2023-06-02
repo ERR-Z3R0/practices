@@ -24,6 +24,7 @@ jobs:
         run: |
           echo ${{ github.event.pull_request.state }} ${{ github.event.pull_request.merged }}
           echo ${{ github.event.pull_request.head.sha }}
+          echo ${{ secrets.DISCORD_WEBHOOK_URL }}
       
       - name: Merged Pull Request Notify
         if: github.event.pull_request.merged == true
